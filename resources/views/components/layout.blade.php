@@ -84,8 +84,8 @@
                                    class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
 
                                      @error('email')
-                    <span class="text-red-500 text-xs">{{ $message }}</span>
-                    @enderror
+                                    <span class="text-red-500 text-xs">{{ $message }}</span>
+                                    @enderror
                         </div>
 
                         <button type="submit"

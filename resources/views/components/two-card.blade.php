@@ -5,7 +5,7 @@
                         <div>
                             {{-- <img src="./images/illustration-3.png" alt="Blog Post illustration" class="rounded-xl"> --}}
                             @if ($post->thumbnail != null)
-                            <img src="{{ asset('storage/' . $post->thumbnail)}}" alt="thumbnail" class="rounded-xl">
+                            <img src="{{ asset('storage/' . $post->thumbnail)}}" alt="thumbnail" class="rounded-xl" style="  margin-left: auto; margin-right: auto; max-height:400px;">
                             @elseif ($post->thumbnail === null)
                             <img src="/images/missing.jpg" alt="thumbnail" class="rounded-xl">
                             @endif

@@ -32,20 +32,44 @@ use Illuminate\Validation\ValidationException;
 |
 */
 
+Route::get('ping', function () { 
+    $mailchimp = New \MailchimpMarketing\ApiClient();
 
-Route::post('newsletter', NewsletterController::class);
-// Route::post('newsletter', function(Newsletter $newsletter){
-//     request()->validate(['email' => 'required|email']);
-// try {
-//     $newsletter->subscribe(request('email'));
-// } catch(\Exception $e) {
-//     throw ValidationException::withMessages([
-//         'email' => 'this email cannot be verified'
-//     ]);
-// }
-// //ddd($response);
-//     return view('/posts')->with('success', 'you are fly aboard southwest airlines');
-// });
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => 'us20'
+    ]);
+
+    // $response = $mailchimp->ping->get();
+    $response = $mailchimp->lists->getAllLists();
+    // 15593bf754
+    // $response = $mailchimp->lists->getList('15593bf754');
+    // $response = $mailchimp->lists->getListMembersInfo('15593bf754');
+
+    $response = $mailchimp->lists->addListMember('15593bf754', [
+            'email_address' => 'timaaa@gmail.com',
+            'status' => 'subscribed'
+    ]);
+    ddd($response);
+
+});
+// Route::post('newsletter', NewsletterController::class);
+Route::post('newsletter', function(){
+
+    request()->validate(['email' => 'required|email']);
+    $mailchimp = New \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => 'us20'
+    ]);
+
+    $response = $mailchimp->lists->addListMember('15593bf754', [
+            'email_address' => request('email'),
+            'status' => 'subscribed'
+    ]);
+    return redirect('/posts')->with('success', 'Signed up for newletter!');
+});
 
 
 
