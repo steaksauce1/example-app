@@ -27,7 +27,9 @@
                     <div class="text-xm font-small text-gray-900">
                         <a href="/posts/{{ $post->slug}}" >
                           @if($post->thumbnail)
-                          <img src="{{ asset('storage/' . $post->thumbnail)}}" alt="missing-img">
+                          <img src="{{ asset('storage/' . $post->thumbnail)}}" alt="icon-img">
+                          @elseif(!$post->thumbnail)
+                            <img src="/images/missing.jpg" alt="missing-img">
                           @endif
                         </a>
                     </div>   

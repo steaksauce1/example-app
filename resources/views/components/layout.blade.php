@@ -19,7 +19,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/posts">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/images/timocast.png" alt="Laracasts Logo" width="165" height="16">
                 </a>
                 <a href="/" class="text-xs font-bold uppercase mt-2 text-gray-100">back to start</a><br>
                 <a href="/admin/posts/create" class="text-xs font-bold uppercase mt-2 text-gray-100">make a post (admin)</a>
