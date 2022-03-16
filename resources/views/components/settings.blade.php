@@ -14,7 +14,22 @@
                         <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">Make a new post</a>
                     </li>
                     <li>
-                        <a  href="/admin/posts/your" class="{{ request()->is('admin/posts/your') ? 'text-blue-500' : '' }}">Your posts</a>
+                         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
+                  
+                    <form method="GET" action="/admin/posts/your">
+                        @if (request('category'))
+                            <input type="hidden" name="category" value="{{ request('category') }}">
+                        @endif
+                        
+                        <input 
+                            type="text" 
+                            name="search" 
+                            placeholder="Find something"
+                            class="bg-transparent placeholder-black font-semibold text-sm"
+                            value="{{ request('search') }}"
+                        >
+                    </form>
+                </div>
                     </li>
                 </ul>
             </aside>

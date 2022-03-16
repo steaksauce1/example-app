@@ -121,6 +121,11 @@ Route::get('authors/{author:username}', function(User $author){
     ]);
 });
 
+// Route::get('admin/posts/your', function(User $author){
+//     return view('admin.posts.index', [ 
+//         'posts' => Post::latest()->paginate(5) // returns the post blade with all the posts related to the author   
+//     ]);
+// });
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
@@ -139,7 +144,6 @@ Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->mid
 
 Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
 Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
-
 
 Route::get('admin/posts/your', [AdminPostController::class, 'yourindex'])->middleware('admin');
 

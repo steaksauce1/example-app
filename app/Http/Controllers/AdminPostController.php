@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\User;
 
 class AdminPostController extends Controller
 {
@@ -14,14 +15,13 @@ class AdminPostController extends Controller
         ]);
     }
 
+    //work in progress
      public function yourindex(){
         return view('admin.posts.index', [ 
-            'posts' =>  Post::latest()->filter(
-                    request(['author' => 'asdf'])
+           'posts' => Post::latest()->filter(
+                    request(['search', 'category', 'author',])
                 )->paginate(6)->withQueryString()
-        ]);
-
-
+            ]);
     }
 
 
