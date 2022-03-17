@@ -146,6 +146,7 @@ Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->midd
 Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
 
 Route::get('admin/posts/your', [AdminPostController::class, 'yourindex'])->middleware('admin');
+Route::patch('admin/posts{post}/changestatus', [AdminPostController::class, 'changestatus'])->middleware('admin');
 
 
 // Route::get('post/{post}', function ($id) {

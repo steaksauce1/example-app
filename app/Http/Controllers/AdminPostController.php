@@ -11,7 +11,7 @@ class AdminPostController extends Controller
 {
     public function index(){
         return view('admin.posts.index', [ 
-            'posts' => Post::paginate(50)
+            'posts' => Post::latest()->paginate(50)
         ]);
     }
 
@@ -94,8 +94,24 @@ class AdminPostController extends Controller
             'thumbnail' => $post->exists ? ['image'] : ['required', 'image'],
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post)],
             'excerpt' => 'required',
+            'status' => 'required',
             'body' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
+    }
+
+    public function changestatus(Post $post){
+          $attributes = $this->changestatus($post);
+
+            if ($attributes['status'] == true){
+                $attributes['status'] = false;
+            } elseif ($attributes['status'] == false) {
+                $attributes['status'] = true;
+            }
+
+            $post->update($attributes);
+
+            return back()->with('success', 'Post Updated!');
+
     }
 }

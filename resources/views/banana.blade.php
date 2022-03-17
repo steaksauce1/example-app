@@ -8,10 +8,10 @@
 <body>
 
 
-	<h1>helo</h1>
+	<h1>hello</h1>
 
 	<p>
-		iem gud prgramr!! :)
+		nothing to see here
 	</p>
 
 </body>

@@ -13,8 +13,12 @@
                     <li>
                         <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">Make a new post</a>
                     </li>
-                    <li>
-                         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
+                  
+                </ul>
+                <h3 class="font-bold">Search</h3>
+                <ul>
+                     <li>
+                         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-2 py-1 mr-2">
                   
                     <form method="GET" action="/admin/posts/your">
                         @if (request('category'))
@@ -29,7 +33,7 @@
                             value="{{ request('search') }}"
                         >
                     </form>
-                </div>
+                    </div>
                     </li>
                 </ul>
             </aside>

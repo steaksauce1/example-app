@@ -10,6 +10,25 @@
                     <x-form.input name='thumbnail' type='file' :value="old('thumbnail', $post->thumbnail)"/>
                     <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl" width="100">
                     </div>
+                    <x-form.radio name='status' value="{{ $post->status }}" />
+               {{-- active status radio buttons--}}
+             {{--    <label for="active">
+                <input 
+                    type="radio" 
+                    name="active" 
+                    id="active" 
+                    value="active"  
+                 > Active </label>
+                 &nbsp;&nbsp;&nbsp; 
+                 <label for="inactive">   
+                <input 
+                    type="radio" 
+                    name="inactive" 
+                    id="inactive" 
+                    value="inactive" 
+                 > Inactive </label>     --}}
+
+
                 <x-form.textarea name='excerpt'>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
                 <x-form.textarea name='body'>{{ old('body', $post->body) }}</x-form.textarea>
                 <x-form.field>
@@ -41,7 +60,7 @@
 
 
 
-<x-layout>
+{{-- <x-layout>
     <x-settings :heading="'Edit Post: ' . $post->title">
         <form method="POST" action="/admin/posts/{{ $post->id }}" enctype="multipart/form-data">
             @csrf
@@ -50,6 +69,7 @@
             <x-form.input name="title" :value="old('title', $post->title)" required />
             <x-form.input name="slug" :value="old('slug', $post->slug)" required />
 
+
             <div class="flex mt-6">
                 <div class="flex-1">
                     <x-form.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
@@ -57,6 +77,8 @@
 
                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl ml-6" width="100">
             </div>
+
+           
 
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
             <x-form.textarea name="body" required>{{ old('body', $post->body) }}</x-form.textarea>
@@ -80,3 +102,4 @@
         </form>
     </x-settings>
 </x-layout>
+ --}}
