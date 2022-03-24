@@ -11,6 +11,8 @@
                     id="active" 
                     {{-- value="active"  --}}
                     value=true
+                    
+
                    {{--  {{   old('status') !== null && old('status') == true ? 'checked' : '' }} --}}
                  > Active </label>
                  &nbsp;&nbsp;&nbsp; {{-- adding in some space here--}}

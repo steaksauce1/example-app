@@ -7,9 +7,9 @@
                                                                alt="Head of Lary the mascot"></h2> --}}
 
             <p class="text-sm mt-14">
-            Now with more
+            Make a 
             </p>
-            <a href="/admin/posts">Admin controlls!</a>
+            <a href="admin/posts/create">Post!</a>
 
             <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
                

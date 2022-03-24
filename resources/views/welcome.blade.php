@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="p-6">
+                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 ">
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M 12 6.253 v 13 m 0 -13 C 10.832 5.477 9.246 5 7.5 5 S 4.168 5.477 8 6 v 13 C 4.168 18.477 5.754 18 7.5 18 s 3.332 0.477 4.5 1.253 m 0 -13 C 13.168 5.477 14.754 5 16.5 5 c 1.747 0 3.332 0.477 -0.5 1 v 12.747 C 19.832 18.477 18.247 18 16.5 18 c -1.746 0 -3.332 0.477 -4.5 1.253"></path></svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="/posts" class="underline text-gray-900 dark:text-white">Test Posts</a></div>
@@ -110,15 +110,15 @@
                                 </div>
                             </div>
                         </div>
-                          <div class="p-6">
+                          <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="M 12 6.253 v 13 m 0 -13 C 10.832 5.477 9.246 5 7.5 5 S 4.168 5.477 8 6 v 13 C 4.168 18.477 5.754 18 7.5 18 s 3.332 0.477 4.5 1.253 m 0 -13 C 13.168 5.477 14.754 5 16.5 5 c 1.747 0 3.332 0.477 -0.5 1 v 12.747 C 19.832 18.477 18.247 18 16.5 18 c -1.746 0 -3.332 0.477 -4.5 1.253"></path></svg>
+                            {{--     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="M 12 6.253 v 13 m 0 -13 C 10.832 5.477 9.246 5 7.5 5 S 4.168 5.477 8 6 v 13 C 4.168 18.477 5.754 18 7.5 18 s 3.332 0.477 4.5 1.253 m 0 -13 C 13.168 5.477 14.754 5 16.5 5 c 1.747 0 3.332 0.477 -0.5 1 v 12.747 C 19.832 18.477 18.247 18 16.5 18 c -1.746 0 -3.332 0.477 -4.5 1.253"></path></svg> --}}
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Banana</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    B A N A N A
+                                    Empty splash page
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                             </a>
 
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M 12 6.253 v 13 m 0 -13 C 10.832 5.477 9.246 5 7.5 5 S 4.168 5.477 8 6 v 13 C 4.168 18.477 5.754 18 7.5 18 s 3.332 0.477 4.5 1.253 m 0 -13 C 13.168 5.477 14.754 5 16.5 5 c 1.747 0 3.332 0.477 -0.5 1 v 12.747 C 19.832 18.477 18.247 18 16.5 18 c -1.746 0 -3.332 0.477 -4.5 1.253"></path></svg>
+                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
 
                             <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">

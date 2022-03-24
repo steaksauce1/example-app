@@ -135,8 +135,8 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
-Route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
+Route::post('admin/posts', [AdminPostController::class, 'store']);
+Route::get('admin/posts/create', [AdminPostController::class, 'create']);
 
 Route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
 Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->middleware('admin');
