@@ -157,3 +157,8 @@ Route::patch('admin/posts{post}/changestatus', [AdminPostController::class, 'cha
 //   }) -> where('post', '[A-z_\-]+');
 
 
+Route::get('/mastermind', function(){
+
+    return view('/mastermind/mastermind');
+
+});
