@@ -78,7 +78,7 @@
             <!-- More people... -->
           </tbody>
         </table>
-
+        {{ $posts->links()}}
       </div>
     </div>
   </div>

@@ -9,9 +9,17 @@ use App\Models\User;
 
 class AdminPostController extends Controller
 {
+    // public function index(){
+    //     return view('admin.posts.index', [ 
+    //         'posts' => Post::latest()->paginate(5)
+    //     ]);
+    // }
+
     public function index(){
         return view('admin.posts.index', [ 
-            'posts' => Post::latest()->paginate(50)
+            'posts' => Post::latest()->filter(
+                request(['search', 'category', 'author',])
+            )->paginate(6)->withQueryString()
         ]);
     }
 

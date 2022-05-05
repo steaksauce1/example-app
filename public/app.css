@@ -27,21 +27,27 @@ h2{
 @keyframes flashboarder{
 	from{
 		/*border:  1px black solid;*/
-		border-top: 2px white solid;
-	}
-	20%{
-		border-top: 2px white solid;
-	}
-	40%{
 		border-top: 2px black solid;
-		border-left: 2px white solid;
+
+	}
+	50%{
+		border-top: 2px black solid;
 	}
 	60%{
+		border-top: 2px white solid;
+		border-left: 2px black solid;
+	}
+	70%{
+		border-top: 2px black solid;
+		border-left: 2px white solid;
+		border-right: 2px black solid;
+	}
+	80%{
 		
 		border-left: 2px black solid;
 		border-right: 2px white solid;
 	}
-	80%{
+	90%{
 		border-right: 2px black solid;
 		border-bottom: 2px white solid;
 	}
