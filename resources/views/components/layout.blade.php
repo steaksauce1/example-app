@@ -37,6 +37,7 @@
                     <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
                     @endif
                      <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log out</x-dropdown-item>
+                    <x-dropdown-item href="/mastermind" :active="request()->is('mastermind')">Mastermind</x-dropdown>
                      <form id="logout-form" method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6 hidden">
                         @csrf
                     </form>
