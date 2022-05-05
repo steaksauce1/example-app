@@ -16,6 +16,7 @@ function getRandomColor(){
     return Math.floor(Math.random() * 6);
 }
 
+
 function startNewGame(){
     /*
         Start New Game
@@ -24,6 +25,7 @@ function startNewGame(){
         and generate a new mastermind code
 
     */
+   console.log("starting new game...");
 
     // 'i' is per row
     for(i = 1; i <= 10; i++){
@@ -90,7 +92,9 @@ function submitGuess(){
             console.log('checking status of guess...');
             correctColor = 0;
             correctPlace = 0;
-            tempCode = mastermindCode;
+            tempCode = [...mastermindCode];
+            console.log("Mastercode: " + mastermindCode + " - Tempcode: " + tempCode);
+            
             //check correct place
             console.log("checking placement");
             for(i = 0; i < 4; i++){
@@ -111,7 +115,7 @@ function submitGuess(){
                 console.log("for :" +guessCode[i]);
 
                 for(j=0; j<tempCode.length; j++){
-                    
+                    console.log("comparing " + guessCode[i] + " : " + tempCode[j]);
                     if(guessCode[i] == tempCode[j]){
                         console.log("found");
                         correctColor++;
