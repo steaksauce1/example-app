@@ -4,6 +4,7 @@
 
 console.log("Hello there!");
 
+
 let mastermindCode = [];
 const colorCode = ['white', 'black', 'blue', 'green', 'red', 'yellow'];
 let indexRow = 1;
@@ -77,16 +78,16 @@ function col4Select(color){
 
 
 function submitGuess(){
+    console.log(mastermindCode);
     if(indexRow <= 10){
         //check if guess has all options filled
         if( document.getElementById('row'+indexRow+'col'+1).innerHTML == ' ' ||
             document.getElementById('row'+indexRow+'col'+2).innerHTML == ' ' ||
             document.getElementById('row'+indexRow+'col'+3).innerHTML == ' ' ||
-            document.getElementById('row'+indexRow+'col'+4).innerHTML == ' '
+            document.getElementById('row'+indexRow+'col'+4).innerHTML == ' '   
         ){
             alert("please make a selection for all four columns");
             console.log("player has not selected all four options");
-        
         }else{
         
             console.log('checking status of guess...');
@@ -102,10 +103,7 @@ function submitGuess(){
                     correctPlace++;
                 }
             }
-            //check if win
-            if(correctPlace == 4){
-                alert("You Win!");
-            }
+            
             //set the reveal for correct placement
             document.getElementById('row'+indexRow+'col'+5).innerHTML = "<span style='color: black '>" + correctPlace + "</span>";
 
@@ -128,12 +126,21 @@ function submitGuess(){
             // set the reveal for correct colors
             document.getElementById('row'+indexRow+'col'+6).innerHTML = "<span style='color: red'>" + correctColor + "</span>";
 
-            //increment guess to next row
-            indexRow++;
+
+            //check if win
+            if(correctPlace == 4){
+                alert("You Win!");
+            }
 
             if(indexRow == 10){
                 alert('GAMB OVER');
             }
+            //increment guess to next row
+            indexRow++;
+
+           
+
+
 
         }
     }
@@ -144,3 +151,5 @@ function submitGuess(){
     
     
 }
+
+
