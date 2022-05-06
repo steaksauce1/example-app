@@ -35,6 +35,7 @@ function startNewGame(){
 
             if(j<=4){
                 document.getElementById('row'+i+'col'+j).innerHTML = " ";
+                document.getElementById('row'+i+'col'+j).className = "border border-slate-700";
             }else{
                 document.getElementById('row'+i+'col'+j).innerHTML = "...";
             }
@@ -58,22 +59,76 @@ function startNewGame(){
 function col1Select(color){
     console.log("col 1 color : " + color);
     guessCode[0] = color;
-    document.getElementById('row'+indexRow+'col'+1).innerHTML = "<span style='color: " + color + "'>" + color + "</span>";
+    document.getElementById('row'+indexRow+'col'+1).className =  colorClassSelector(color);
+    document.getElementById('row'+indexRow+'col'+1).innerHTML = "<span style='color: " + colorTextSelector(color) + "' text-align: center>" + color + "</span>";
 }
 function col2Select(color){
     console.log("col 2 color : " + color);
     guessCode[1] = color;
-    document.getElementById('row'+indexRow+'col'+2).innerHTML = "<span style='color: " + color + "'>" + color + "</span>";
+    document.getElementById('row'+indexRow+'col'+2).className =  colorClassSelector(color);
+    document.getElementById('row'+indexRow+'col'+2).innerHTML = "<span style='color: " + colorTextSelector(color) + "'>" + color + "</span>";
 }
 function col3Select(color){
     console.log("col 3 color : " + color);
     guessCode[2] = color;
-    document.getElementById('row'+indexRow+'col'+3).innerHTML = "<span style='color: " + color + "'>" + color + "</span>";
+    document.getElementById('row'+indexRow+'col'+3).className =  colorClassSelector(color);
+    document.getElementById('row'+indexRow+'col'+3).innerHTML = "<span style='color: " + colorTextSelector(color) + "'>" + color + "</span>";
 }
 function col4Select(color){
     console.log("col 4 color : " + color);
     guessCode[3] = color;
-    document.getElementById('row'+indexRow+'col'+4).innerHTML = "<span style='color: " + color + "'>" + color + "</span>";
+    document.getElementById('row'+indexRow+'col'+4).className =  colorClassSelector(color);
+    document.getElementById('row'+indexRow+'col'+4).innerHTML = "<span style='color: " + colorTextSelector(color) + "'>" + color + "</span>";
+}
+
+function colorClassSelector(color){
+    let colorClass = "bg-gray-900"
+    switch(color){
+        case 'white':
+            colorClass = "border border-slate-600 bg-gray-100 text-center";
+            return colorClass;
+        case 'black':
+            colorClass = "border border-slate-600 bg-gray-800 text-center";
+            return colorClass;
+        case 'red':
+            colorClass = "border border-slate-600 bg-red-500 text-center";
+            return colorClass; 
+        case 'blue':
+            colorClass = "border border-slate-600 bg-blue-500 text-center";
+            return colorClass;  
+        case 'green':
+            colorClass = "border border-slate-600 bg-green-500 text-center";
+            return colorClass;   
+        case 'yellow':
+            colorClass = "border border-slate-600 bg-yellow-500 text-center";
+            return colorClass;   
+    }
+
+}
+
+function colorTextSelector(color){
+    let colorText = "white"
+    switch(color){
+        case 'white':
+            colorText = "black";
+            return colorText;
+        case 'black':
+            colorText = "white";
+            return colorText;
+        case 'red':
+            colorText = "white";
+            return colorText; 
+        case 'blue':
+            colorText = "white";
+            return colorText;  
+        case 'green':
+            colorText = "white";
+            return colorText;   
+        case 'yellow':
+            colorText = "white";
+            return colorText;   
+    }
+
 }
 
 

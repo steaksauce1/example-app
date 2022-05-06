@@ -6,12 +6,12 @@
 		<div class="border-collapse border border-slate-500"> 
 			<h3 class="text-center">Score</h3>
 			<br>
-			<h3>Timer</h3>
-			<div class="countdown">
-				<span id="time" class="time">00:00:00</span>
+			<h3 class="text-center">Timer</h3>
+			<div class="countdown text-center">
+				<span id="time" class="time text-center">00:00:00</span>
 			</div>
 		</div>
-		<table class="table-auto border-collapse border border-slate-500 ">
+		<table class="table-auto border-collapse border border-slate-500">
 			<tr>
 				<th class="border border-slate-600">Column 1</th>
 				<th class="border border-slate-600">Column 2</th>
