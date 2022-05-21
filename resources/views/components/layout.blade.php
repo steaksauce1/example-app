@@ -33,11 +33,12 @@
                         <button href="/register" class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</button>
                     </x-slot>
                     @if(auth()->user()->can('admin'))
-                    <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Dashboard</x-dropdown-item>
+                    <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">AdminDash</x-dropdown-item>
                     <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
                     @endif
                      <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log out</x-dropdown-item>
                     <x-dropdown-item href="/mastermind" :active="request()->is('mastermind')">Mastermind</x-dropdown>
+                        <x-dropdown-item href="/dashboard" :active="request()->is('dashboard')">Dashboard</x-dropdown>
                      <form id="logout-form" method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6 hidden">
                         @csrf
                     </form>

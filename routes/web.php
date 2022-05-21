@@ -9,7 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\NewsletterController;
-
+use App\Http\Controllers\DashboardController;
 
 use App\Services\Newsletter;
 
@@ -162,3 +162,10 @@ Route::get('/mastermind', function(){
     return view('/mastermind/mastermind');
 
 });
+
+// Route::get('dashboard', function(){
+//     return view('dashboard');
+// });
+
+Route::get('dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard/make', [DashboardController::class, 'create']);

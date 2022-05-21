@@ -106,7 +106,8 @@
 
 
 	<div class=" grid grid-cols-3 gap-4 place-content-center bg-gray-500">
-		<div></div>
+		<div style="overflow-y:auto">
+		</div>
 		<div class="text-center py-2 px-2">
 			<button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="submitGuess()">Submit</button><br>
 		</div>

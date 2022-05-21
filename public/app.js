@@ -38,6 +38,7 @@ function startNewGame(){
                 document.getElementById('row'+i+'col'+j).className = "border border-slate-700";
             }else{
                 document.getElementById('row'+i+'col'+j).innerHTML = "...";
+                document.getElementById('row'+i+'col'+j).className = "border border-slate-700 text-center";
             }
 
         }
@@ -101,7 +102,22 @@ function colorClassSelector(color){
             return colorClass;   
         case 'yellow':
             colorClass = "border border-slate-600 bg-yellow-500 text-center";
-            return colorClass;   
+            return colorClass;
+        case 0:
+            colorClass = "border border-slate-600 bg-gray-500 text-center";
+            return colorClass;
+        case 1:
+            colorClass = "border border-slate-600 bg-gray-400 text-center";
+            return colorClass;
+        case 2:
+            colorClass = "border border-slate-600 bg-gray-300 text-center";
+            return colorClass;
+        case 3:
+            colorClass = "border border-slate-600 bg-gray-200 text-center";
+            return colorClass;
+        case 4:
+            colorClass = "border border-slate-600 bg-gray-50 text-center";
+            return colorClass;
     }
 
 }
@@ -160,8 +176,8 @@ function submitGuess(){
             }
             
             //set the reveal for correct placement
-            document.getElementById('row'+indexRow+'col'+5).innerHTML = "<span style='color: black '>" + correctPlace + "</span>";
-
+            document.getElementById('row'+indexRow+'col'+5).innerHTML = "<span style='color: black; font-weight: 900; '>" + correctPlace + "</span>";
+            document.getElementById('row'+indexRow+'col'+5).className = colorClassSelector(correctPlace);
             //check for correct color
             console.log("checking colors");
             for(i = 0; i < 4; i++){
@@ -179,7 +195,8 @@ function submitGuess(){
             
             }
             // set the reveal for correct colors
-            document.getElementById('row'+indexRow+'col'+6).innerHTML = "<span style='color: red'>" + correctColor + "</span>";
+            document.getElementById('row'+indexRow+'col'+6).innerHTML = "<span style='color: red; font-weight: 900;'>" + correctColor + "</span>";
+            document.getElementById('row'+indexRow+'col'+6).className = colorClassSelector(correctColor);
 
 
             //check if win
@@ -187,11 +204,14 @@ function submitGuess(){
                 alert("You Win!");
             }
 
-            if(indexRow == 10){
-                alert('GAMB OVER');
-            }
+           
             //increment guess to next row
             indexRow++;
+
+            if(correctPlace >= 11){
+                alert("GAME OVER");
+                console.log('game over...');
+            }
 
            
 
