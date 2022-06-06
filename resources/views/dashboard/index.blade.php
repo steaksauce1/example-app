@@ -3,21 +3,17 @@
 	
 
 	 <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6 bg-slate-50">
-        {{-- @if ($posts->count())
-	
-        <x-post-grid :posts="$posts"/>
-
-
-     
-         {{ $posts->links()}}
-      @else
-          <p class="text-center">No post here boss, what are you doing!?</p>
-      @endif --}}
+    
         @if ($notes->count())
+            <p class="bg-gray-100">Number of posts: {{ $notes->count() }}</p>
             <x-notes-grid :notes="$notes" />
+            <p class="bg-blue-100">End of posts</p>
         @else
             <p class="text-center">No Notes here boss, what are you doing!?</p>
         @endif
+
+
+      
 	
 	 </main>
 
