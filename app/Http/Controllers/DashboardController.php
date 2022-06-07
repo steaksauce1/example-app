@@ -17,12 +17,33 @@ class DashboardController extends Controller
         return view('dashboard.index', [
                 'notes' => Notes::latest()->filter(
                     request(['body'])
-                )->paginate(6)->withQueryString()
+                )->paginate(11)->withQueryString()
             ]);
     }
 
     public function create(){
         return view('dashboard.create-note');
     }
+
+    public function store(){
+
+        // ddd(request());
+        $attributes = request()->validate([
+            'body' => 'required'
+        ]);
+        $attributes['user_id'] = auth()->id();
+        Notes::create($attributes);
+
+        
+        return redirect('dashboard');
+    }
+
+
+    public function destroy(Notes $notes){
+        $notes->delete();
+        return redirect('dashboard');
+}
+
+
 
 }

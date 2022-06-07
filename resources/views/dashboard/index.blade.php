@@ -5,11 +5,12 @@
 	 <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6 bg-slate-50">
     
         @if ($notes->count())
-            <p class="bg-gray-100">Number of posts: {{ $notes->count() }}</p>
+            <p class="bg-gray-100 p-2 rounded-xl">Total notes: {{ $notes->count() }}</p>
             <x-notes-grid :notes="$notes" />
-            <p class="bg-blue-100">End of posts</p>
+            {{ $notes->links()}}
+            <p class="bg-blue-100 text-center p-2 rounded-xl">New note section +</p>
         @else
-            <p class="text-center">No Notes here boss, what are you doing!?</p>
+            <p class="text-center p-2 rounded-xl">No Notes here boss, what are you doing!?</p>
         @endif
 
 
@@ -20,3 +21,5 @@
 
 
 </x-layout>
+
+<script type="text/javascript" src="app.js"></script>

@@ -228,3 +228,12 @@ function submitGuess(){
 }
 
 
+function NotecardCreateNewCard(){
+    let noteplus = document.getElementById("noteplus");
+    let notetext = document.getElementById("notetext");
+    let notesave = document.getElementById("notesave");
+
+    noteplus.style.display = "none";
+    notetext.style.display = "block";
+    notesave.style.display = "block";
+}

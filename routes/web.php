@@ -169,4 +169,5 @@ Route::get('/mastermind', function(){
 // });
 
 Route::get('dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/make', [DashboardController::class, 'create']);
+Route::post('dashboard/store', [DashboardController::class, 'store']);
+Route::delete('dashboard/delete/{notes}', [DashboardController::class, 'destroy']);
