@@ -1,5 +1,5 @@
 html{
-	background-color: grey;
+	background-color: #ffffff;
 }
 body{
 	border:  2px black solid;
@@ -12,7 +12,7 @@ body{
 }
 
 .foobar{
-	background-color: silver;
+	background-color: #f1f1f1;
 }
 
 hr{

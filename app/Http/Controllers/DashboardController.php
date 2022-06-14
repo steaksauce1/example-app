@@ -17,8 +17,13 @@ class DashboardController extends Controller
         return view('dashboard.index', [
                 'notes' => Notes::latest()->filter(
                     request(['body'])
-                )->paginate(11)->withQueryString()
+                )->paginate(12)->withQueryString()
             ]);
+    }
+
+    public function calendar(){
+
+        return view('dashboard.calendar');
     }
 
     public function create(){

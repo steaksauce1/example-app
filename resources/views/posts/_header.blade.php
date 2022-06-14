@@ -7,9 +7,9 @@
                                                                alt="Head of Lary the mascot"></h2> --}}
 
             <p class="text-sm mt-14">
-            Make a 
+            Welcome to my laravel site! I experiment with new page layouts and components all the time. Sign up to create an account and follow along or explore the posts below to read about lorem ipsum.
             </p>
-            <a href="admin/posts/create">Post!</a>
+          
 
             <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
                
