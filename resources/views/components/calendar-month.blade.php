@@ -8,7 +8,7 @@
         <div class="border border-black">Friday</div>
         <div class="border border-black">Saturday</div>
     </div>
-    @for($j = 0; $j < 5; $j++)
+    @for($j = 0; $j <= 5; $j++)
         <x-calendar-week>{{$j}}</x-calendar-week>
         
     @endfor

@@ -8,7 +8,7 @@
             <p class="bg-green-100 p-2 rounded-xl">Total notes: {{ $notes->count() }}</p>
             <x-notes-grid :notes="$notes" />
             {{ $notes->links()}}
-            <p class="bg-blue-100 text-center p-2 rounded-xl"><a  href="dashboard/calendar">Calendar View</a></p>
+            <p class="bg-blue-100 text-center p-2 rounded-xl"><a  href="dashboard/calendar/?month=1">Calendar View</a></p>
         @else
             <p class="text-center p-2 rounded-xl">No Notes here boss, what are you doing!?</p>
         @endif

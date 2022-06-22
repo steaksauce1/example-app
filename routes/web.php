@@ -170,5 +170,6 @@ Route::get('/mastermind', function(){
 
 Route::get('dashboard', [DashboardController::class, 'index']);
 Route::get('dashboard/calendar', [DashboardController::class, 'calendar']);
+Route::get('dashboard/calendar/{month}', [DashboardController::class, 'calendar']);
 Route::post('dashboard/store', [DashboardController::class, 'store']);
 Route::delete('dashboard/delete/{notes}', [DashboardController::class, 'destroy']);
