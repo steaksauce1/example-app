@@ -1,4 +1,5 @@
-
+            
+    @props(['notes'])
 <div class="lg:grid lg:grid-cols-7 bg-slate-900 rounded-xl">
 
   
@@ -13,15 +14,15 @@
     $week = 0;
 
     switch ($month) {
-        case '1':
+            case '1':
             $monthstart = 6;
             $monthend = 31;
             break;
-        case '2':
+            case '2':
             $monthstart = 2;
             $monthend = 28;
             break;
-        case '3':
+            case '3':
             $monthstart = 2;
             $monthend = 31;
             break;
@@ -107,88 +108,135 @@
 @endphp
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @for ($i = 1; $i < 8; $i++)
 
-            
-          
 
+{{-- 
+    <x-calendar-day class="border-r border-b"> </x-calendar-day> --}}
 
-
-    @if($day < 1)
-        @if ($i == 1)
-        <x-calendar-day class="border-r border-b border-l"> </x-calendar-day>
-        @else
-        <x-calendar-day class="border-r border-b"> </x-calendar-day>
-    @endif
-    
-    @php
-        $day += 1;
-    @endphp
-
-    @elseif($day > $monthend)
-        @if ($i == 1)
-        <x-calendar-day class="border-r border-b border-l"> </x-calendar-day>
-        @else
-        <x-calendar-day class="border-r border-b"> </x-calendar-day>
-    @endif
-    
-    @php
-        $day += 1;
-    @endphp
-
-
-    @else
-        @if ($day < 10)
+        @if($day < 1)
             @if ($i == 1)
-            <x-calendar-day class="border-r border-b border-l">0{{$day}}</x-calendar-day>
+                <x-calendar-day class="border-r border-b border-l">
+                    <x-slot name="day"> {{$day}} </x-slot>
+                    <x-slot name="month"> {{$month}} </x-slot>
+                    <x-slot name="body"> {{$body}} </x-slot>
+                </x-calendar-day>
             @else
-            <x-calendar-day class="border-r border-b">0{{$day}}</x-calendar-day>
+                <x-calendar-day class="border-r border-b">
+                    <x-slot name="day"> {{$day}} </x-slot>
+                    <x-slot name="month"> {{$month}} </x-slot>
+                    <x-slot name="body"> {{$body}} </x-slot>
+                </x-calendar-day>
             @endif
-
-
-        @php
-        $day += 1;
-        @endphp
-
-
-        @else
-      
-            @if ($i == 1)
-            <x-calendar-day class="border-r border-b border-l">{{$day}}</x-calendar-day>
-            @else
-            <x-calendar-day class="border-r border-b">{{$day}}</x-calendar-day>
-            @endif
-
-
-        @php
-        $day += 1;
-        @endphp
-    @endif 
         
-        {{-- @if($day < 1)
-            <x-calendar-day class="border-r border-b"> </x-calendar-day>
-            @php
-                $day += 1;
-            @endphp
-            @elseif($day > $monthend)
-            <x-calendar-day class="border-r border-b"> </x-calendar-day>
             @php
                 $day += 1;
             @endphp
 
+        @elseif($day > $monthend)
+            @if ($i == 1)
+                <x-calendar-day class="border-r border-b border-l">
+                    <x-slot name="day"> {{$day}} </x-slot>
+                    <x-slot name="month"> {{$month}} </x-slot>
+                    <x-slot name="body"> @foreach($notes as $note)
+                        @if($note->day == $day && $note->month == $month)
+                        <x-notecard :notes="$note" class="col-span-3" />
+                        @endif
+                    @endforeach </x-slot>
+                </x-calendar-day>
+            @else
+                <x-calendar-day class="border-r border-b">
+                    <x-slot name="day"> {{$day}} </x-slot>
+                    <x-slot name="month"> {{$month}} </x-slot>
+                    <x-slot name="body"> @foreach($notes as $note)
+                        @if($note->day == $day && $note->month == $month)
+                        <x-notecard :notes="$note" class="col-span-3" />
+                        @endif
+                    @endforeach </x-slot>
+                </x-calendar-day>
+        @endif
+        
+            @php
+                $day += 1;
+            @endphp
+
+        @else
+            @if ($day < 10)
+                @if ($i == 1)
+                    <x-calendar-day class="border-r border-b border-l" :notes="$notes">0{{$day}}
+                        <x-slot name="day"> {{$day}} </x-slot>
+                        <x-slot name="month"> {{$month}} </x-slot>
+                        <x-slot name="body"> @foreach($notes as $note)
+                            @if($note->day == $day && $note->month == $month)
+                            <x-notecard :notes="$note" class="col-span-3" />
+                            @endif
+                        @endforeach </x-slot>
+                    </x-calendar-day>
+                @else
+                    <x-calendar-day class="border-r border-b" :notes="$notes">0{{$day}}
+                        <x-slot name="day"> {{$day}} </x-slot>
+                        <x-slot name="month"> {{$month}} </x-slot>
+                        <x-slot name="body">@foreach($notes as $note)
+                            @if($note->day == $day && $note->month == $month)
+                            <x-notecard :notes="$note" class="col-span-3" />
+                            @endif
+                        @endforeach </x-slot>
+                    </x-calendar-day>
+                @endif
+
+            @php
+            $day += 1;
+            @endphp
 
             @else
-                @if ($day < 10)
-                <x-calendar-day class="border-r border-b">0{{$day}}</x-calendar-day>
-                @php
-                $day += 1;
-                @endphp
+                @if ($i == 1)
+            
+                    <x-calendar-day class="border-r border-b border-l" :notes="$notes">{{$day}}
+                        <x-slot name="day"> {{$day}} </x-slot>
+                        <x-slot name="month"> {{$month}} </x-slot>
+                        <x-slot name="body"> @foreach($notes as $note)
+                            @if($note->day == $day && $note->month == $month)
+                            <x-notecard :notes="$note" class="col-span-3" />
+                            @endif
+                        @endforeach </x-slot>
+                    </x-calendar-day>
                 @else
-                <x-calendar-day class="border-r border-b">{{$day}}</x-calendar-day>
-                @php
+                    <x-calendar-day class="border-r border-b" :notes="$notes">{{$day}}
+                        <x-slot name="day"> {{$day}} </x-slot>
+                        <x-slot name="month"> {{$month}} </x-slot>
+                        <x-slot name="body"> @foreach($notes as $note)
+                            @if($note->day == $day && $note->month == $month)
+                            <x-notecard :notes="$note" class="col-span-3" />
+                            @endif
+                        @endforeach</x-slot>
+                    </x-calendar-day>
+                @endif
+
+            @php
                 $day += 1;
-                @endphp
-            @endif  --}}
+            @endphp
+        @endif 
+            
 
         @endif
       

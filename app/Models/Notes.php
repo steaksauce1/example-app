@@ -25,5 +25,6 @@ class Notes extends Model
     public function store(){
 
     }
+    
 
 }

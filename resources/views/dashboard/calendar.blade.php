@@ -13,6 +13,7 @@
 
             $month = htmlspecialchars($_GET["month"]);
             $name = '';
+            $body = "content";
 
             switch ($month) {
                 case '1':
@@ -58,6 +59,14 @@
             }
            
         @endphp
+
+<div class="lg:grid lg:grid-cols-6 bg-gray-300 rounded-xl">
+    @foreach($notes as $note)
+        <x-notecard :notes="$note" class="col-span-3" />
+    @endforeach
+    </div>
+
+
         @if( $month == 1)
         @else
               << 
@@ -67,6 +76,8 @@
         @else
             >>
         @endif
+
+       
 
 
         <div class="text-center">
@@ -88,6 +99,11 @@
        
     </div>
     
-    <x-calendar-month></x-calendar-month>
+    <x-calendar-month-2 :notes="$notes">
+        <x-slot name="body">{{$body}}</x-slot>
+    </x-calendar-month-2>
     <p class="bg-red-100 text-center p-2 rounded-xl"><a  href="/dashboard">Dashboard View</a></p>
+    <x-calendar-month :notes="$notes">
+        <x-slot name="body">{{$body}}</x-slot>
+    </x-calendar-month>
 </x-layout>
