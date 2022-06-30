@@ -172,4 +172,6 @@ Route::get('dashboard', [DashboardController::class, 'index']);
 Route::get('dashboard/calendar', [DashboardController::class, 'calendar']);
 Route::get('dashboard/calendar/{month}', [DashboardController::class, 'calendar']);
 Route::post('dashboard/store', [DashboardController::class, 'store']);
+Route::post('dashboard/storecalendar', [DashboardController::class, 'storecalendar']);
 Route::delete('dashboard/delete/{notes}', [DashboardController::class, 'destroy']);
+Route::delete('dashboard/calendar/{month}/delete/{notes}', [DashboardController::class, 'destroyinmonth']);

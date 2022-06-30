@@ -49,12 +49,30 @@ class DashboardController extends Controller
         return redirect('dashboard');
     }
 
+    public function storecalendar(){
+         // ddd(request());
+         $attributes = request()->validate([
+            'body' => 'required',
+            'month' => 'required',
+            'day' => 'required'
+        ]);
+        $attributes['user_id'] = auth()->id();
+        Notes::create($attributes);
+
+        
+        return redirect()->back();
+    }
+
 
     public function destroy(Notes $notes){
         $notes->delete();
         return redirect('dashboard');
 }
 
+public function destroyinmonth(Notes $notes){
+    $notes->delete();
+    return  redirect()->back();
+}
 
 
 }

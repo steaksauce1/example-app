@@ -237,3 +237,37 @@ function NotecardCreateNewCard(){
     notetext.style.display = "block";
     notesave.style.display = "block";
 }
+
+
+function NotecardCreateNewCardCalendar(day, month){
+    // let noteplus = document.getElementById("noteplus");
+    // let notetext = document.getElementById("notetext");
+    // let notesave = document.getElementById("notesave");
+
+    // noteplus.style.display = "none";
+    // notetext.style.display = "block";
+    // notesave.style.display = "block";
+
+
+
+    /*
+        Tring out something new here. 
+             In this version, we're adding a few more $slot calls into the ID fields into the calendar-note-add card. these fields 
+             should be removed if you wanted the commended-out code above to function again. The older version above will only go 
+             to the first available card that does not have a note in it.
+    */
+
+    let noteplusname = "noteplus" + day;
+    let notetextname = "notetext" + day;
+    let notesavename = "notesave" + day;
+    console.log(day + ' . ' + month);
+
+    let noteplus = document.getElementById(noteplusname);
+    console.log(noteplusname);
+    let notetext = document.getElementById(notetextname);
+    let notesave = document.getElementById(notesavename);
+
+    noteplus.style.display = "none";
+    notetext.style.display = "block";
+    notesave.style.display = "block";
+}

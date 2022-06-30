@@ -1,15 +1,14 @@
-<x-layout >
+<x-layout>
 	@include('dashboard._header')
 
-    <main class="lg:grid lg:grid-cols-7 bg-slate-900 rounded-xl">
+    <main>
 
 
        
-    </main>
+    
     <div class="bg-blue-100 p-2 flex-auto rounded-xl">
        
         @php 
-            echo  htmlspecialchars($_GET["month"]);
 
             $month = htmlspecialchars($_GET["month"]);
             $name = '';
@@ -54,45 +53,40 @@
                     break;
                 
                 default:
-                    $name = 'Default';
+                    $name = '1';
                     break;
             }
            
         @endphp
 
-<div class="lg:grid lg:grid-cols-6 bg-gray-300 rounded-xl">
-    @foreach($notes as $note)
-        <x-notecard :notes="$note" class="col-span-3" />
-    @endforeach
-    </div>
 
-
+        <div class="text-center justify-center p-3">
         @if( $month == 1)
         @else
-              << 
+        <span class="text-5xl"><a href="?month={{$month - 1}}" target="_self"> << </a> </span>
         @endif
-       <p class="text-7xl text-center">{{ $name ?? ''}}</p>
+       <span class="text-7xl text-center">{{ $name ?? ''}}</span>
         @if( $month == 12)
         @else
-            >>
+        <span class="text-5xl"><a href="?month={{$month + 1}}" target="_self"> >> </a></span>
         @endif
-
+        </div>
        
 
 
         <div class="text-center">
-        <a  href="/dashboard/calendar/?month=1">Jan</a>
-        <a  href="/dashboard/calendar/?month=2">Feb</a>
-        <a  href="/dashboard/calendar/?month=3">Mar</a>
-        <a  href="/dashboard/calendar/?month=4">Apr</a>
-        <a  href="/dashboard/calendar/?month=5">May</a>
-        <a  href="/dashboard/calendar/?month=6">Jun</a>
-        <a  href="/dashboard/calendar/?month=7">Jul</a>
-        <a  href="/dashboard/calendar/?month=8">Aug</a>
-        <a  href="/dashboard/calendar/?month=9">Sep</a>
-        <a  href="/dashboard/calendar/?month=10">Oct</a>
-        <a  href="/dashboard/calendar/?month=11">Nov</a>
-        <a  href="/dashboard/calendar/?month=12">Dec</a>
+        <a  href="/dashboard/calendar/?month=1" style="color: rgb(3 105 161); !important">Jan</a>
+        <a  href="/dashboard/calendar/?month=2" style="color: rgb(3 105 161); !important">Feb</a>
+        <a  href="/dashboard/calendar/?month=3" style="color: rgb(3 105 161); !important">Mar</a>
+        <a  href="/dashboard/calendar/?month=4" style="color: rgb(3 105 161); !important">Apr</a>
+        <a  href="/dashboard/calendar/?month=5" style="color: rgb(3 105 161); !important">May</a>
+        <a  href="/dashboard/calendar/?month=6" style="color: rgb(3 105 161); !important">Jun</a>
+        <a  href="/dashboard/calendar/?month=7" style="color: rgb(3 105 161); !important">Jul</a>
+        <a  href="/dashboard/calendar/?month=8" style="color: rgb(3 105 161); !important">Aug</a>
+        <a  href="/dashboard/calendar/?month=9" style="color: rgb(3 105 161); !important">Sep</a>
+        <a  href="/dashboard/calendar/?month=10" style="color: rgb(3 105 161); !important">Oct</a>
+        <a  href="/dashboard/calendar/?month=11" style="color: rgb(3 105 161); !important">Nov</a>
+        <a  href="/dashboard/calendar/?month=12" style="color: rgb(3 105 161); !important">Dec</a>
         </div>
         
 
@@ -103,7 +97,13 @@
         <x-slot name="body">{{$body}}</x-slot>
     </x-calendar-month-2>
     <p class="bg-red-100 text-center p-2 rounded-xl"><a  href="/dashboard">Dashboard View</a></p>
-    <x-calendar-month :notes="$notes">
+    {{-- <x-calendar-month :notes="$notes">
         <x-slot name="body">{{$body}}</x-slot>
-    </x-calendar-month>
+    </x-calendar-month> --}}
+
+
+</main>
+
 </x-layout>
+
+<script type="text/javascript" src="/app.js"></script>

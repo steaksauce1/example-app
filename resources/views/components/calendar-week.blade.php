@@ -17,6 +17,7 @@
             case '1':
             $monthstart = 6;
             $monthend = 31;
+            
             break;
             case '2':
             $monthstart = 2;
@@ -137,15 +138,25 @@
         @if($day < 1)
             @if ($i == 1)
                 <x-calendar-day class="border-r border-b border-l">
-                    <x-slot name="day"> {{$day}} </x-slot>
+                    <x-slot name="day"> 
+                        {{$day}}
+                    </x-slot>
                     <x-slot name="month"> {{$month}} </x-slot>
-                    <x-slot name="body"> {{$body}} </x-slot>
+                    <x-slot name="body"> @foreach($notes as $note)
+                        @if($note->day == $day && $note->month == $month)
+                        <x-notecard :notes="$note" class="col-span-3" />
+                        @endif
+                    @endforeach </x-slot>
                 </x-calendar-day>
             @else
                 <x-calendar-day class="border-r border-b">
                     <x-slot name="day"> {{$day}} </x-slot>
                     <x-slot name="month"> {{$month}} </x-slot>
-                    <x-slot name="body"> {{$body}} </x-slot>
+                    <x-slot name="body"> @foreach($notes as $note)
+                        @if($note->day == $day && $note->month == $month)
+                        <x-notecard :notes="$note" class="col-span-3" />
+                        @endif
+                    @endforeach </x-slot>
                 </x-calendar-day>
             @endif
         
@@ -156,6 +167,7 @@
         @elseif($day > $monthend)
             @if ($i == 1)
                 <x-calendar-day class="border-r border-b border-l">
+
                     <x-slot name="day"> {{$day}} </x-slot>
                     <x-slot name="month"> {{$month}} </x-slot>
                     <x-slot name="body"> @foreach($notes as $note)

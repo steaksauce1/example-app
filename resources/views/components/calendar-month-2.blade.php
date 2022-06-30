@@ -127,24 +127,50 @@ switch ($month) {
         <div class="lg:grid lg:grid-cols-7 bg-slate-900 border-black border-l">
             @for($i = 1; $i < 8; $i++)
                 {{-- <div class="border-r border-b bg-blue-300"> --}}
-                    <x-calendar-day class="border-b border-r">
+                    <x-calendar-day class="border-b border-r bg-gray-200">
 
                         
                         @if ($day < 10)
+                            @if ($day <= 0)
+                            
+                            @else
                             0{{$day}}
+                            @endif
+                            
                         @else
+                            @if ($day > $monthend)
+                            
+                            @else
                             {{$day}}
+                            @endif
+                            
                         @endif
 
-                        <x-slot name="day"> {{$i}} </x-slot>
-                        <x-slot name="month"> {{$month}} </x-slot>
+                        {{-- <x-slot name="day"> {{$i}} </x-slot>
+                        <x-slot name="month"> {{$month}} </x-slot> --}}
                         <x-slot name="body"> 
-                            
+                            @php
+                                    $foundnote = 0;
+                            @endphp
                             @foreach($notes as $note)
+                                
                                 @if($note->day == $day && $note->month == $month)
                                 <x-notecard :notes="$note" class="col-span-3" />
+                                
+                                    @php
+                                    $foundnote += 1;
+                                    @endphp
+                                    
                                 @endif
+                                
                             @endforeach
+                            @if($foundnote == 0 && $day > 0 && $day < $monthend+1)
+                                <x-calendar-create-note>
+
+                                    <x-slot name="month" >{{ $month }}</x-slot>
+                                    <x-slot name="day">{{ $day }}</x-slot>
+                                </x-calendar-create-note>
+                            @endif
                          </x-slot>
                     </x-calendar-day>
                     
