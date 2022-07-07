@@ -75,4 +75,11 @@ public function destroyinmonth(Notes $notes){
 }
 
 
+public function showcard(Notes $notes){
+      return view('/dashboard/single-card', [
+            'notes' => $notes
+        ]);
+}
+
+
 }

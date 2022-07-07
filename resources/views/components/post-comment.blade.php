@@ -1,5 +1,6 @@
    
 @props(['comment'])
+
 <x-panel class="bg-gray-100 ">
 <article class="flex bg-gray-100 space-x-4">
 
@@ -22,12 +23,17 @@
             {{ $comment->body }}
         </p>
     </div>
+
+    @auth
      <div class="text-left text-gray-500">
-        <form method="POST" action="#">
+        @if(auth()->user()->can('admin'))
+        <form method="POST" action="/comment/{{ $comment->id }}">
                 @csrf
                 @method('DELETE')
-                  <button></button>
+                  <button>X</button>
         </form>
+        @endif
     </div>
+    @endauth
 </article>
 </x-panel>

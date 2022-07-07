@@ -19,9 +19,11 @@
             <div class="mt-1 flex flex-col justify-between">
                 <header>
                     <div class="mt-1">
-                        <p class="text-l" style=" white-space: wrap; display: block; max-width: 150px; overflow: auto">
-                            {{ $notes->body }}
-                        </p>
+                        <a href="dashboard/{{ $notes->id }}">
+                            <p class="text-l" style=" white-space: wrap; display: block; max-width: 150px; overflow: auto">
+                                {{ $notes->body }}
+                            </p>
+                        </a>
                         <span class="mt-2 block text-gray-400 text-xs">
                             Published <time>{{ $notes->created_at }}</time> 
                         </span>

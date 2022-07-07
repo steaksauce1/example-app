@@ -11,7 +11,7 @@
                 </header>
                 <form method="POST" action="/dashboard/storecalendar" enctype="multipart/form-data">
                     @csrf
-                    <textarea maxlength="150" id="notetext{{$day}}" style="display: none" name='body'></textarea>
+                    <textarea maxlength="150" id="notetext{{$day}}" style="display: none; width: 100%" name='body'></textarea>
                     <input type="hidden" id="month{{$month}}" name='month' value="{{ $month }}">
                     <input type="hidden" id="day{{$day}}" name='day' value="{{ $day }}">
 

@@ -99,7 +99,7 @@ Route::get('/posts', [PostController::class, 'index'])->name('home');
 //POST PAGE - a direct page to a post with its contents, author, and category
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
-Route::delete('posts/{post:slug}/comments', [PostCommentsController::class, 'destroy']);
+Route::delete('/comment/{comment}', [PostCommentsController::class, 'destroy']);
 
 //SUBMIT PAGE - form sto submit posts using si
 Route::get('/submit', [PostController::class, 'showform']);
@@ -175,3 +175,4 @@ Route::post('dashboard/store', [DashboardController::class, 'store']);
 Route::post('dashboard/storecalendar', [DashboardController::class, 'storecalendar']);
 Route::delete('dashboard/delete/{notes}', [DashboardController::class, 'destroy']);
 Route::delete('dashboard/calendar/{month}/delete/{notes}', [DashboardController::class, 'destroyinmonth']);
+Route::get('dashboard/{notes}', [DashboardController::class, 'showcard']);
