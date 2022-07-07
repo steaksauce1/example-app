@@ -5,7 +5,9 @@
  
   
      @foreach($notes as $note)
+      
          <x-notecard :notes="$note" class="col-span-3" />
+
      @endforeach
 
      @if ($notes->count() < 12)

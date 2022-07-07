@@ -20,11 +20,11 @@
                 <header>
                     <div class="mt-1">
 
-                        <a href="/dashboard/{{ $notes->id }}">
+                        
                             <p class="text-l" style=" white-space: wrap; display: block; /*max-width: 150px;*/ width: 100%; overflow: auto">
                                 {{ $notes->body }}
                             </p>
-                        </a>
+                        
                         <span class="mt-2 block text-gray-400 text-xs">
                             Published <time>{{ $notes->created_at }}</time> 
                         </span>
