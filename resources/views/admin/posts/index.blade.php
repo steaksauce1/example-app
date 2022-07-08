@@ -56,9 +56,9 @@
               </td>
               <td class="px-2 py-4 whitespace-nowrap">
                
-                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{ $post->status == false ? 
-                  "bg-blue-100" : "bg-green-100" }}{{-- bg-green-100 --}} text-green-800"> 
-                  {{ $post->status !== null ? $post->status : "Active" }}</span>
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{ $post->status == 0 ? 
+                  "bg-blue-100" : "bg-red-100" }}{{-- bg-green-100 --}} text-green-800"> 
+                  {{ $post->status !== null ? $post->status : "True" }}</span>
                
               </td>
               <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">

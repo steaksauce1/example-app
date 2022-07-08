@@ -10,7 +10,7 @@
                     name="{{ $name }}" 
                     id="active" 
                     {{-- value="active"  --}}
-                    value=true
+                    value=1
                     
 
                    {{--  {{   old('status') !== null && old('status') == true ? 'checked' : '' }} --}}
@@ -22,7 +22,7 @@
                     name="{{ $name }}" 
                     id="inactive" 
                    {{--  value="inactive"  --}}
-                   value=false
+                   value=0
                    {{--  {{  old('status') !== null && old('status') == true ? '' : 'checked' }} --}}
                  > Inactive </label>
 
