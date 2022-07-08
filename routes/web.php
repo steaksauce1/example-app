@@ -176,3 +176,4 @@ Route::post('dashboard/storecalendar', [DashboardController::class, 'storecalend
 Route::delete('dashboard/delete/{notes}', [DashboardController::class, 'destroy']);
 Route::delete('dashboard/calendar/{month}/delete/{notes}', [DashboardController::class, 'destroyinmonth']);
 Route::get('dashboard/{notes}', [DashboardController::class, 'showcard']);
+

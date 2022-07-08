@@ -1,5 +1,8 @@
             
             @props(['post'])
+
+
+            @if($post->status !== false)
                         <article
                 class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
                 <div class="py-6 px-5 lg:flex">
@@ -23,6 +26,7 @@
                                 <h1 class="text-3xl">
                                     <a href="/posts/{{ $post->slug }}">
                                  {{ $post->title }} 
+
                                     </a>
                                 </h1>
 
@@ -64,7 +68,7 @@
             </article>
 
 
-
+            @endif
 
 
 
