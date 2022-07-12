@@ -103,13 +103,13 @@ switch ($month) {
 
 <div>
     <div class="lg:grid lg:grid-cols-7 bg-slate-900 rounded-xl">
-        <div class="border border-black">Sunday</div>
-        <div class="border border-black">Monday</div>
-        <div class="border border-black">Tuesday</div>
-        <div class="border border-black">Wednesday</div>
-        <div class="border border-black">Thursday</div>
-        <div class="border border-black">Friday</div>
-        <div class="border border-black">Saturday</div>
+        <div class="border-t border-b border-l border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Sunday</p></div>
+        <div class="border-t border-b border-l border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Monday</p></div>
+        <div class="border-t border-b border-l border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Tuesday</p></div>
+        <div class="border-t border-b border-l border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Wednesday</p></div>
+        <div class="border-t border-b border-l border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Thursday</p></div>
+        <div class="border-t border-b border-l border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Friday</div>
+        <div class="border-t border-b border-l border-r border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Saturday</p></div>
     </div>
 
 
@@ -127,7 +127,11 @@ switch ($month) {
         <div class="lg:grid lg:grid-cols-7 bg-slate-900 border-black border-l">
             @for($i = 1; $i < 8; $i++)
                 {{-- <div class="border-r border-b bg-blue-300"> --}}
-                    <x-calendar-day class="border-b border-r bg-gray-200">
+                    <x-calendar-day class="
+                        border-b 
+                        border-r 
+                     
+                        bg-gray-200">
 
                         
                         @if ($day < 10)
