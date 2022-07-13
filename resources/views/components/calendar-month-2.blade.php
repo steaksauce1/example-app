@@ -127,14 +127,17 @@ switch ($month) {
         <div class="lg:grid lg:grid-cols-7 bg-slate-900 border-black border-l">
             @for($i = 1; $i < 8; $i++)
                 {{-- <div class="border-r border-b bg-blue-300"> --}}
-                    <x-calendar-day class="
-                        border-b 
-                        border-r 
-                     
-                        bg-gray-200">
 
+                    <x-calendar-day class="
+                        border-b
+                        border-r
+                        {{ $day <= 0 || $day > $monthend ? 'bg-gray-400' : 'bg-gray-200'}}
+                        {{-- bg-gray-200 --}}">
+
+                   
+                      
                         
-                        @if ($day < 10)
+                    {{--     @if ($day < 10)
                             @if ($day <= 0)
                             
                             @else
@@ -148,6 +151,16 @@ switch ($month) {
                             {{$day}}
                             @endif
                             
+                        @endif --}}
+
+
+
+                        @if ($day >= 10 && $day <= $monthend)
+                            {{$day}}
+                        @elseif ($day < 10 && $day > 0)
+                            0{{$day}}
+                        @else
+
                         @endif
 
                         {{-- <x-slot name="day"> {{$i}} </x-slot>
