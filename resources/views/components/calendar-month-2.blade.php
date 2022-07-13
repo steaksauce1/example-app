@@ -53,53 +53,41 @@ switch ($month) {
             case '12':
             $monthstart = 4;
             $monthend = 31;
-            break;
-            
-        
-        default:
-            # code...
+            break;      
+            default:
             break;
     }
-
 
     switch ($slot) {
         case '0':
         $week = 0;
         $day = $day -$monthstart;
             break;
-        
         case '1':
         $week = 1;
         $day = $day -$monthstart + 7*$week ;
             break;
-        
         case '2':
         $week = 2;
         $day = $day -$monthstart + 7*$week ;
             break;
-        
         case '3':
         $week = 3;
         $day = $day -$monthstart + 7*$week ;
             break;
-        
         case '4':
         $week = 4;
         $day = $day -$monthstart + 7*$week ;
             break;
-
         case '5':
         $week = 5;
         $day = $day -$monthstart + 7*$week ;
             break;
-        
         default:
         $week = 0;
             break;
     }
 @endphp
-
-
 
 <div>
     <div class="lg:grid lg:grid-cols-7 bg-slate-900 rounded-xl">
@@ -112,49 +100,32 @@ switch ($month) {
         <div class="border-t border-b border-l border-r border-black bg-gray-900"><p class="text-center text-gray-100 uppercase">Saturday</p></div>
     </div>
 
-
-
-
-
     @php
     $day = $day -$monthstart;
     @endphp
-
-
-
 
     @for($j = 0; $j <= 5; $j++)
         <div class="lg:grid lg:grid-cols-7 bg-slate-900 border-black border-l">
             @for($i = 1; $i < 8; $i++)
                 {{-- <div class="border-r border-b bg-blue-300"> --}}
-
                     <x-calendar-day class="
                         border-b
                         border-r
-                        {{ $day <= 0 || $day > $monthend ? 'bg-gray-400' : 'bg-gray-200'}}
+                        {{ $day <= 0 || $day > $monthend ? 'bg-gray-300' : 'bg-gray-200'}}
                         {{-- bg-gray-200 --}}">
-
-                   
-                      
-                        
                     {{--     @if ($day < 10)
                             @if ($day <= 0)
                             
                             @else
                             0{{$day}}
                             @endif
-                            
                         @else
                             @if ($day > $monthend)
                             
                             @else
                             {{$day}}
                             @endif
-                            
                         @endif --}}
-
-
-
                         @if ($day >= 10 && $day <= $monthend)
                             {{$day}}
                         @elseif ($day < 10 && $day > 0)
@@ -162,7 +133,6 @@ switch ($month) {
                         @else
 
                         @endif
-
                         {{-- <x-slot name="day"> {{$i}} </x-slot>
                         <x-slot name="month"> {{$month}} </x-slot> --}}
                         <x-slot name="body"> 
@@ -170,36 +140,26 @@ switch ($month) {
                                     $foundnote = 0;
                             @endphp
                             @foreach($notes as $note)
-                                
                                 @if($note->day == $day && $note->month == $month)
                                 <x-notecard :notes="$note" class="col-span-3" />
-                                
                                     @php
                                     $foundnote += 1;
                                     @endphp
-                                    
                                 @endif
-                                
                             @endforeach
                             @if($foundnote == 0 && $day > 0 && $day < $monthend+1)
                                 <x-calendar-create-note>
-
                                     <x-slot name="month" >{{ $month }}</x-slot>
                                     <x-slot name="day">{{ $day }}</x-slot>
                                 </x-calendar-create-note>
                             @endif
                          </x-slot>
                     </x-calendar-day>
-                    
-
                     @php
                     $day += 1;
                     @endphp
                 {{-- </div> --}}
             @endfor
-
         </div>
     @endfor
-   
-    
 </div>

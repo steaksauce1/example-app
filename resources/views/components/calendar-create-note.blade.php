@@ -6,7 +6,7 @@
             <div class="mt-0 flex flex-col justify-between">
                 <header class="text-center ">
                     <div class="mt-0">
-                       <button class="text-8xl text-center justify-center inline " id="noteplus{{$day}}" onclick="NotecardCreateNewCardCalendar({{$day}}, {{$month}})" style="color: #888">+</button>
+                       <button class="text-7xl text-center justify-center inline text-gray-400 " id="noteplus{{$day}}" onclick="NotecardCreateNewCardCalendar({{$day}}, {{$month}})" >+</button>
                     </div>
                 </header>
                 <form method="POST" action="/dashboard/storecalendar" enctype="multipart/form-data">

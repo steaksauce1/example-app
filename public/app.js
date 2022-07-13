@@ -232,10 +232,12 @@ function NotecardCreateNewCard(){
     let noteplus = document.getElementById("noteplus");
     let notetext = document.getElementById("notetext");
     let notesave = document.getElementById("notesave");
+    let noteoldcopy = document.getElementById("noteoldcopy");
 
     noteplus.style.display = "none";
     notetext.style.display = "block";
     notesave.style.display = "block";
+    noteoldcopy.style.display = "block";
 }
 
 
@@ -270,4 +272,6 @@ function NotecardCreateNewCardCalendar(day, month){
     noteplus.style.display = "none";
     notetext.style.display = "block";
     notesave.style.display = "block";
+
+
 }

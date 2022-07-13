@@ -20,7 +20,7 @@
             <div class="mt-0 flex flex-col justify-between">
                 <header class="text-center ">
                     <div class="mt-0">
-                       <button class="text-8xl text-center justify-center inline " id="noteplus" onclick="NotecardCreateNewCard()" style="color: #888">+</button>
+                       <button class="text-7xl text-center justify-center inline text-gray-400 " id="noteplus" onclick="NotecardCreateNewCard()" >+</button>
                     </div>
                 </header>
                 <form method="POST" action="dashboard/store" enctype="multipart/form-data">
