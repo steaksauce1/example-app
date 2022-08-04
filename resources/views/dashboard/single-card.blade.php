@@ -38,7 +38,7 @@
         
         </div>
 	 		<a href="/dashboard"> back to dashboard</a><br>
-	 		<a href="/dashboard/calendar">back to calendar</a>
+	 		<a href="/dashboard/calendar/?month=1">back to calendar</a>
 	 </main>
 
 </x-layout>	

@@ -10,7 +10,7 @@
         </div>
         <div class="flex-auto {{-- bg-gray-200 --}}"></div>
     </div>  
-    <div name="day{{$day ?? ''}}"class="px-8 py-6 {{-- bg-gray-200 --}}">      
+    <div name="day{{$day ?? ''}}"class="px-2 py-2 {{-- bg-gray-200 --}}">      
             {{$day ?? ''}}
             {{$month ?? ''}}
             {{$body ?? ''}}

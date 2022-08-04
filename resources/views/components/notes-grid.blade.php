@@ -15,7 +15,7 @@
         <article
         {{ $attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl bg-gray-200'])}}>
      
-        <div class="py-10 px-8">
+        <div class="py-6 px-3">
          
             <div class="mt-0 flex flex-col justify-between">
                 <header class="text-center ">
@@ -25,8 +25,8 @@
                 </header>
                 <form method="POST" action="dashboard/store" enctype="multipart/form-data">
                     @csrf
-                    <textarea maxlength="150" id="notetext" style="display: none" name='body'></textarea>
-                    <button type="submit" id="notesave" style="display: none">Save</button>
+                    <textarea maxlength="150" id="notetext" style="display: none; width: 100%; height: 100px;" name='body'></textarea>
+                    <button type="submit" id="notesave" style="display: none; margin: auto;">Save</button>
                 </form>
             </div>
         </div>
