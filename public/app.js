@@ -210,7 +210,7 @@ function submitGuess(){
 
             if(correctPlace >= 11){
                 alert("GAME OVER");
-                console.log('game over...');
+                console.log('game over... ' + mastermindCode);
             }
 
            
@@ -221,10 +221,30 @@ function submitGuess(){
     }
     else{
         alert("GAME OVER");
-        console.log('game over...');
+        console.log('game over... :' + mastermindCode);
     }
     
     
+}
+
+function displayMastermindCode(){
+
+    document.getElementById('answerrow1').className =  colorClassSelector(mastermindCode[0]);
+    document.getElementById('answerrow1').innerHTML = "<span style='color: " + colorTextSelector(mastermindCode[0]) + "' text-align: center>" + mastermindCode[0] + "</span>";
+    document.getElementById('answerrow2').className =  colorClassSelector(mastermindCode[1]);
+    document.getElementById('answerrow2').innerHTML = "<span style='color: " + colorTextSelector(mastermindCode[1]) + "' text-align: center>" + mastermindCode[1] + "</span>";
+    document.getElementById('answerrow3').className =  colorClassSelector(mastermindCode[2]);
+    document.getElementById('answerrow3').innerHTML = "<span style='color: " + colorTextSelector(mastermindCode[2]) + "' text-align: center>" + mastermindCode[2] + "</span>";
+    document.getElementById('answerrow4').className =  colorClassSelector(mastermindCode[3]);
+    document.getElementById('answerrow4').innerHTML = "<span style='color: " + colorTextSelector(mastermindCode[3]) + "' text-align: center>" + mastermindCode[3] + "</span>";
+}
+
+
+function failTheGame(){
+
+
+displayMastermindCode();
+
 }
 
 

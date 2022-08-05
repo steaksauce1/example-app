@@ -101,7 +101,20 @@
 				<td class="border border-slate-700" id="row10col6">...</td>
 			</tr>
 		</table>
-		<div class="border-collapse border border-slate-500"> </div>
+		<div class="border-collapse border border-slate-500"> 
+			<table class="table-auto border-collapse border border-slate-500 px-12 py-12 m-auto">
+				<tr>
+					<td class="border border-slate-700 px-12 py-12" id="answerrow1">1</td>
+					<td class="border border-slate-700 px-12 py-12" id="answerrow2">2</td>
+					<td class="border border-slate-700 px-12 py-12" id="answerrow3">3</td>
+					<td class="border border-slate-700 px-12 py-12" id="answerrow4">4</td>
+					
+				</tr>
+
+
+			</table>
+
+		</div>
 	</div>
 
 
@@ -166,7 +179,8 @@
 	<div class=" grid grid-cols-3 gap-4 place-content-center bg-gray-500">
 		<div></div>
 		<div class="text-center py-2 px-2">
-			<button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="startNewGame()">New Game </button><br>
+			<button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="startNewGame()">New Game </button>
+			<button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="failTheGame()">Fail Game </button> 
 		</div>
 		<div></div>
 	</div>
