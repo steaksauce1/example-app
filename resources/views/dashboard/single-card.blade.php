@@ -21,7 +21,8 @@
                     @csrf
                     <textarea maxlength="300" id="notetext" style="display: none; width: 100%;" name='body'><span class="line-through">{!! $notes->body !!}</span></textarea>
                     <input type="hidden" name="user_id" value="{{$notes->user_id}}">
-
+                    <input type="string" name="month" value="{{$notes->month}}">
+                    <input type="string" name="day" value="{{$notes->day}}">
                     <button type="submit" id="notesave" style="display: none">Save</button>
                 </form>
 

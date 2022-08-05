@@ -40,13 +40,15 @@ class DashboardController extends Controller
 
         // ddd(request());
         $attributes = request()->validate([
-            'body' => 'required'
+            'body' => 'required',
+            'month' => 'required',
+            'day' => 'required'
         ]);
         $attributes['user_id'] = auth()->id();
         Notes::create($attributes);
 
         
-        return redirect('dashboard');
+        return redirect()->back();
     }
 
     public function storecalendar(){
